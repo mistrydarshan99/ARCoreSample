@@ -26,16 +26,24 @@ import java.lang.ref.WeakReference;
 public class PortalActivity extends AppCompatActivity implements RendererStartListener {
 
   private ViroViewARCore mViroView;
+  //private ViroViewGVR mViroView;
   private ARScene mScene;
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     mViroView = new ViroViewARCore(this, this);
+    /*mViroView = new ViroViewGVR(this, this, new Runnable() {
+      @Override public void run() {
+        // Handle existing GVR Here
+      }
+    });*/
+    //mViroView.setVRModeEnabled(true);
     setContentView(mViroView);
+    setUpScene();
   }
 
   @Override public void onRendererStart() {
-    setUpScene();
+    //setUpScene();
 
   }
 
@@ -71,7 +79,7 @@ public class PortalActivity extends AppCompatActivity implements RendererStartLi
 
     // Create a PortalScene that uses the Portal as an entrance.
     PortalScene portalScene = new PortalScene();
-    portalScene.setPosition(new Vector(0, 0, -0.3));
+    portalScene.setPosition(new Vector(0, 0, -3));
     portalScene.setPassable(true);
     portalScene.setPortalEntrance(portal);
 

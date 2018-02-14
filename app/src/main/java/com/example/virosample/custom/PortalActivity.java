@@ -48,11 +48,12 @@ public class PortalActivity extends AppCompatActivity implements RendererStartLi
 
   @Override public void onRendererStart() {
     setUpScene();
+
   }
 
   private void setUpScene() {
     mScene = new ARScene();
-    mScene.displayPointCloud(true);
+    mScene.displayPointCloud(false);
     // Create an TrackedPlanesController to visually display tracked planes
     PortalActivity.TrackedPlanesController controller =
         new PortalActivity.TrackedPlanesController(this, mViroView);
@@ -61,6 +62,7 @@ public class PortalActivity extends AppCompatActivity implements RendererStartLi
     controller.addOnPlaneClickListener(new ClickListener() {
       @Override public void onClick(int i, Node node, Vector clickPosition) {
         createDroidAtPosition(clickPosition);
+        mViroView.setRenderStartListener(null);
       }
 
       @Override public void onClickState(int i, Node node, ClickState clickState, Vector vector) {

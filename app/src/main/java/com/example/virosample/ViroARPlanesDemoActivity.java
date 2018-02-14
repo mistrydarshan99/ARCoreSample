@@ -27,7 +27,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.virosample.polyApi.AsyncFileDownloader;
-import com.google.tango.javacommon.FileUtils;
 import com.viro.core.ARAnchor;
 import com.viro.core.ARNode;
 import com.viro.core.ARPlaneAnchor;
@@ -139,8 +138,8 @@ public class ViroARPlanesDemoActivity extends ViroActivity implements RendererSt
 
           }
         }
-        FileUtils.writeBytesToFile(entry.contents,
-            Environment.getExternalStorageDirectory() + "/Models", entry.fileName);
+        //FileUtils.writeBytesToFile(entry.contents,
+        //    Environment.getExternalStorageDirectory() + "/Models", entry.fileName);
         //objGeometry = ObjGeometry.parse(contents);
       } else if (entry.fileName.toLowerCase().endsWith(".mtl")) {
         // There can be more than one MTL file. Just add the materials to our library.
@@ -153,8 +152,8 @@ public class ViroARPlanesDemoActivity extends ViroActivity implements RendererSt
 
           }
         }
-        FileUtils.writeBytesToFile(entry.contents,
-            Environment.getExternalStorageDirectory() + "/Models", entry.fileName);
+        //FileUtils.writeBytesToFile(entry.contents,
+        //    Environment.getExternalStorageDirectory() + "/Models", entry.fileName);
       }
     }
   }
