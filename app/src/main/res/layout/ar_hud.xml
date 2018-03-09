@@ -1,54 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_hud_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="5dp"
     >
-  <RelativeLayout
-      android:layout_width="match_parent"
 
-      android:layout_height="50dp"
-      android:layout_gravity="top"
-      android:background="#B3000000"
-      android:gravity="center"
-      >
+  <ImageView
+      android:id="@+id/ar_back_button"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_margin="10dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/btn_close"
+      />
 
-    <TextView
-        android:id="@+id/initText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Initializing AR...."
-        android:textColor="@android:color/white"
-        android:textSize="15.5sp"
-        android:textStyle="bold"
-        />
 
-  </RelativeLayout>
+  <ImageView
+      android:id="@+id/ar_details_page"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_alignParentRight="true"
+      android:layout_margin="10dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/btn_more"
+      />
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="bottom|end"
-      android:gravity="center"
-      android:visibility="gone"
-      >
-
-    <Button
-        android:id="@+id/btnRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="showPopup"
-        android:text="Refresh"
-        />
-
-  </RelativeLayout>
 
   <LinearLayout
       android:id="@+id/bottom_frame_controls"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
-      android:layout_gravity="bottom"
-      android:gravity="center_horizontal"
+      android:gravity="bottom|center_horizontal"
       android:orientation="vertical"
       android:visibility="gone"
       >
@@ -91,5 +76,4 @@
         android:visibility="gone"
         />
   </LinearLayout>
-
-</FrameLayout>
+</RelativeLayout>

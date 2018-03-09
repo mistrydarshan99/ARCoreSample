@@ -37,7 +37,7 @@
     </activity>-->
 
     <activity
-        android:name="com.example.virosample.PortalActivity"
+        android:name="com.example.virosample.custom.ProductARActivityComplete"
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme1">
