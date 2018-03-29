@@ -484,6 +484,17 @@ public class ProductARActivityComplete extends ViroActivity implements RendererS
     final Texture beachTexture = new Texture(beachBackground, Texture.Format.RGBA8, true, false);
     portalScene.setBackgroundTexture(beachTexture);
 
+    //TODO for VIdeo
+    /*Uri parse = Uri.parse("file:///android_asset/test.mp4");
+    VideoTexture videoTexture = new VideoTexture(mViroView.getViroContext(), parse);
+    Material material = new Material();
+    material.setDiffuseTexture(videoTexture);
+    Surface surface = new Surface(10, 10);
+    surface.setMaterials(Arrays.asList(material));
+    videoTexture.play();*/
+
+    //portalScene.setBackgroundTexture(videoTexture);
+
     arScene.getRootNode().addChildNode(portalScene);
   }
 }
